@@ -2,12 +2,11 @@ package com.example.demo.models;
 
 public class User {
     private String id;
-    private String name;
+    private String username;
+    private String email;  // New email field
 
-    // No-argument constructor
     public User() {}
 
-    // Getters and setters
     public String getId() {
         return id;
     }
@@ -16,11 +15,19 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

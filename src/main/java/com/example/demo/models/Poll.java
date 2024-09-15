@@ -1,34 +1,33 @@
 package com.example.demo.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Poll {
     private String id;
-    private String title;
     private String question;
-    private Map<String, String> votes;  // Track votes by userId -> option
+    private Instant publishedAt;
+    private Instant validUntil;
+    private List<VoteOption> options;
+    private List<Vote> votes = new ArrayList<>(); // Initialize votes list
 
-    // Default constructor
-    public Poll() {
-        this.votes = new HashMap<>();  // Initialize votes as an empty HashMap
+    // Getters and setters for all fields, including votes
+
+    public List<Vote> getVotes() {
+        return votes;
     }
 
-    // Getters and setters for id, title, question
+    public void setVotes(List<Vote> votes) {
+        this.votes = votes;
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getQuestion() {
@@ -39,12 +38,27 @@ public class Poll {
         this.question = question;
     }
 
-    // Getters and setters for votes
-    public Map<String, String> getVotes() {
-        return votes;
+    public Instant getPublishedAt() {
+        return publishedAt;
     }
 
-    public void setVotes(Map<String, String> votes) {
-        this.votes = votes;
+    public void setPublishedAt(Instant publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public Instant getValidUntil() {
+        return validUntil;
+    }
+
+    public void setValidUntil(Instant validUntil) {
+        this.validUntil = validUntil;
+    }
+
+    public List<VoteOption> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<VoteOption> options) {
+        this.options = options;
     }
 }
